@@ -21,8 +21,8 @@ public class FireExtCheck : MonoBehaviour
             }
 
             Debug.Log("Hooray All Fire Vanished!!!");
-            onAllFireVanished.Invoke();
             invokeOnce = true;
+            onAllFireVanished.Invoke();
         }
 
         /*foreach (FireExtinguisher obj in allFires)

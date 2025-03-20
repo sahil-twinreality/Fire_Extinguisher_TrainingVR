@@ -1865,6 +1865,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &603077849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7360604237943805473, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
+  m_PrefabInstance: {fileID: 2110854473}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &618560290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,7 +2189,7 @@ MonoBehaviour:
   GrabButton: 2
   Grabtype: 2
   GrabPhysics: 1
-  GrabMechanic: 1
+  GrabMechanic: 0
   GrabSpeed: 15
   RemoteGrabbable: 0
   RemoteGrabMechanic: 0
@@ -3012,7 +3017,7 @@ MonoBehaviour:
   GrabButton: 2
   Grabtype: 2
   GrabPhysics: 1
-  GrabMechanic: 1
+  GrabMechanic: 0
   GrabSpeed: 15
   RemoteGrabbable: 0
   RemoteGrabMechanic: 0
@@ -3736,7 +3741,7 @@ MonoBehaviour:
   GrabButton: 2
   Grabtype: 2
   GrabPhysics: 1
-  GrabMechanic: 1
+  GrabMechanic: 0
   GrabSpeed: 15
   RemoteGrabbable: 0
   RemoteGrabMechanic: 0
@@ -4243,6 +4248,11 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1321054047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8416186859196766714, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
+  m_PrefabInstance: {fileID: 2110854473}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1356998293
 GameObject:
   m_ObjectHideFlags: 0
@@ -4427,7 +4437,7 @@ MonoBehaviour:
   GrabButton: 2
   Grabtype: 2
   GrabPhysics: 1
-  GrabMechanic: 1
+  GrabMechanic: 0
   GrabSpeed: 15
   RemoteGrabbable: 0
   RemoteGrabMechanic: 0
@@ -5094,7 +5104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hands:
-  - {fileID: 2110854475}
+  - {fileID: 1321054047}
   Controllers:
   - {fileID: 819259825}
   ObjectToHighlight:
@@ -5809,7 +5819,7 @@ MonoBehaviour:
   GrabButton: 2
   Grabtype: 2
   GrabPhysics: 1
-  GrabMechanic: 1
+  GrabMechanic: 0
   GrabSpeed: 15
   RemoteGrabbable: 0
   RemoteGrabMechanic: 0
@@ -6320,7 +6330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hands:
-  - {fileID: 2110854474}
+  - {fileID: 603077849}
   Controllers:
   - {fileID: 1445247727}
   ObjectToHighlight:
@@ -6460,7 +6470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 612891326424754169, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 800798482534677969, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
       propertyPath: m_IsActive
@@ -6528,7 +6538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2683195716791022646, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.86
+      value: 3.394
       objectReference: {fileID: 0}
     - target: {fileID: 2683195716791022646, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6604,7 +6614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230066462873498598, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5959677274440945754, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
       propertyPath: m_Enabled
@@ -6644,7 +6654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7360604237943805473, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8123834767609328093, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
       propertyPath: m_Enabled
@@ -6656,7 +6666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8416186859196766714, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8416742705891564269, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
       propertyPath: GroundedLayers.m_Bits
@@ -6673,16 +6683,6 @@ PrefabInstance:
       addedObject: {fileID: 586382920}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
---- !u!1 &2110854474 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5230066462873498598, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
-  m_PrefabInstance: {fileID: 2110854473}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2110854475 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 612891326424754169, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
-  m_PrefabInstance: {fileID: 2110854473}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2137493123
 PrefabInstance:
   m_ObjectHideFlags: 0

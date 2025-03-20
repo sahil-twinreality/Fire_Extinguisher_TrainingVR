@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Extinguisher
   - Foam
+  - FireCube
   layers:
   - Default
   - TransparentFX

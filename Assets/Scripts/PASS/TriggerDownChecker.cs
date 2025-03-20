@@ -5,9 +5,11 @@ using BNG;
 public class TriggerDownChecker : GrabbableEvents
 {
     public bool checkLeftTrigger;
+    public bool checkRightTriggerUp;
     public bool checkRightTigger;
 
     public UnityEvent onLeftTriggerPressed;
+    public UnityEvent onRightTriggerRevoked;
     public UnityEvent onRightTriggerPressed;
     public UnityEvent onBothTriggerPressed;
     private void Update()
@@ -28,6 +30,16 @@ public class TriggerDownChecker : GrabbableEvents
                 checkRightTigger = false;
                 onRightTriggerPressed.Invoke();
                 OnBothButtonsPressed();
+                checkRightTriggerUp = true;
+            }
+        }
+        if (checkRightTriggerUp)
+        {
+            if (InputBridge.Instance.RightTriggerUp)
+            {
+                checkRightTriggerUp = false;
+                onRightTriggerRevoked.Invoke();
+                //OnBothButtonsPressed();
             }
         }
     }
