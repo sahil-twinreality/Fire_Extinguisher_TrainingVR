@@ -12,7 +12,8 @@ public class Tutorial_Data : MonoBehaviour
     {
         if(checkPrefs)
         {
-            eventCompleted = PlayerPrefs.GetInt("eventCompleted", 0) == 1;
+            //eventCompleted = PlayerPrefs.GetInt("eventCompleted", 0) == 1;
+            eventCompleted = true;
         }
 
         if (eventCompleted)

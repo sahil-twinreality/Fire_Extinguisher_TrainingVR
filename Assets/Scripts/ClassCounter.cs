@@ -12,7 +12,12 @@ public class ClassCounter : MonoBehaviour
         if (counter == 5)
         {
             Debug.Log("Event Completed");
-            onAllClassCompleted.Invoke();
+            Invoke("InvokeUnityEvent", 0.1f);
         }
+    }
+
+    public void InvokeUnityEvent()
+    {
+        onAllClassCompleted.Invoke();
     }
 }
