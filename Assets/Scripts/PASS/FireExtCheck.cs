@@ -22,24 +22,12 @@ public class FireExtCheck : MonoBehaviour
 
             Debug.Log("Hooray All Fire Vanished!!!");
             invokeOnce = true;
-            onAllFireVanished.Invoke();
+            Invoke("lateInvoke", 5.0f);
         }
+    }
 
-        /*foreach (FireExtinguisher obj in allFires)
-        {
-            if(obj.animCompleted == true)
-            {
-                if(!invokeOnce)
-                {
-                    Debug.Log("Hooray All Fire Vanished!!!");
-                    onAllFireVanished.Invoke();
-                    invokeOnce = true;
-                }
-            }
-            else if(obj.animCompleted == false)
-            {
-                Debug.Log("Still More to go :(");
-            }
-        }*/
+    public void lateInvoke()
+    {
+        onAllFireVanished.Invoke();
     }
 }
