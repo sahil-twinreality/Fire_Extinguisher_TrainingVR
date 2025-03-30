@@ -33,15 +33,19 @@ public class TriggerDownChecker : GrabbableEvents
                 checkRightTriggerUp = true;
             }
         }
-        if (checkRightTriggerUp)
+
+        if (InputBridge.Instance.RightTriggerUp || InputBridge.Instance.LeftTriggerUp)
         {
-            if (InputBridge.Instance.RightTriggerUp)
-            {
-                checkRightTriggerUp = false;
-                onRightTriggerRevoked.Invoke();
-                //OnBothButtonsPressed();
-            }
+            checkRightTriggerUp = false;
+            onRightTriggerRevoked.Invoke();
+            checkRightTigger = true;
+            //OnBothButtonsPressed();
         }
+
+        /*if (checkRightTriggerUp)
+        {
+            
+        }*/
     }
     public void CheckTriggerDown()
     {

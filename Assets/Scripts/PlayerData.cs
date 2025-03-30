@@ -12,18 +12,33 @@ public class PlayerData : MonoBehaviour
     private string playerName;
     private static bool dataInputed;
     public UnityEvent onDataInputed;
-    public ButtonPrefsChecker[] prefsCheckers;
+    //public ButtonPrefsChecker[] prefsCheckers;
     public UnityEvent onAllSceneCompleted;
+    public UnityEvent onFireTriangleCompleted;
+    public UnityEvent onFireClassCompleted;
+    public UnityEvent onExtClassCompleted;
+    public UnityEvent onPassClassCompleted;
 
     private string playerNameKey = "playerName";
 
-    private void Start()
+    public static PlayerData Instance { get; private set; }
+
+    void Awake()
     {
-        if (dataInputed)
+        if (Instance == null)
         {
-            onDataInputed.Invoke();
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        if(!dataInputed)
         {
             playerName = PlayerPrefs.GetString(playerNameKey, "");
 
@@ -41,30 +56,49 @@ public class PlayerData : MonoBehaviour
                 keyboard.gameObject.SetActive(true);
                 inputName.placeholder.GetComponent<Text>().text = "Please Enter Your Name";
             }
-
-            dataInputed = true;
         }
 
-        Invoke("CheckMenuData", 0.1f);
+        if(dataInputed)
+        {
+            onDataInputed.Invoke();
+        }
+        //PlayerPrefs.DeleteAll();
+
+        // Load progress from PlayerPrefs
+        Invoke("CheckMenuData", 0.5f);
     }
 
-    private void CheckMenuData()
+    public void CheckMenuData()
     {
-        bool allCompleted = true;
+        dataInputed = true;
+        Debug.Log("Checking Menu Data...");
 
-        foreach (ButtonPrefsChecker buttonPrefs in prefsCheckers)
+        if (PlayerPrefs.GetInt("Fire_Triangle_eventCompleted", 0) == 1)
         {
-            if (PlayerPrefs.GetInt(buttonPrefs.name + "_eventCompleted", 0) != 1)
-            {
-                Debug.Log("Not_Completed");
-                allCompleted = false;
-                break;
-            }
+            Debug.Log("Fire Triangle Completed!");
+            onFireTriangleCompleted.Invoke();
         }
 
-        if (allCompleted)
+        if (PlayerPrefs.GetInt("Extinguisher_Class_eventCompleted", 0) == 1)
         {
-            Debug.Log("Completed");
+            Debug.Log("Extinguisher Class Completed!");
+            onExtClassCompleted.Invoke();
+        }
+
+        if (PlayerPrefs.GetInt("Fire_Class_eventCompleted", 0) == 1)
+        {
+            Debug.Log("Fire Class Completed!");
+            onFireClassCompleted.Invoke();
+        }
+
+        if (PlayerPrefs.GetInt("PASS_eventCompleted", 0) == 1)
+        {
+            Debug.Log("PASS Class Completed!");
+            onPassClassCompleted.Invoke();
+        }
+
+        if(PlayerPrefs.GetInt("Fire_Triangle_eventCompleted", 0) == 1 && PlayerPrefs.GetInt("Extinguisher_Class_eventCompleted", 0) == 1 && PlayerPrefs.GetInt("Fire_Class_eventCompleted", 0) == 1 && PlayerPrefs.GetInt("PASS_eventCompleted", 0) == 1)
+        {
             onAllSceneCompleted.Invoke();
         }
     }
@@ -79,6 +113,13 @@ public class PlayerData : MonoBehaviour
         }
     }
 
+    public void SaveData(string prefSaveName)
+    {
+        PlayerPrefs.SetInt(prefSaveName + "_eventCompleted", 1);
+        PlayerPrefs.Save();
+        Debug.Log(PlayerPrefs.GetInt(prefSaveName + "_eventCompleted", 0));
+    }
+
     public void ResetData()
     {
         PlayerPrefs.DeleteAll();
@@ -89,10 +130,9 @@ public class PlayerData : MonoBehaviour
         oldUser.transform.localPosition = new Vector3(0, -175, 0);
         newUser.gameObject.SetActive(false);
         PlayerPrefs.Save();
-
     }
 
-    public void ReloadData()
+    /*public void ReloadData()
     {
         dataInputed = false;
         foreach (ButtonPrefsChecker buttonPrefs in prefsCheckers)
@@ -128,7 +168,7 @@ public class PlayerData : MonoBehaviour
         }
 
         Invoke("CheckMenuData", 0.1f);
-    }
+    }*/
 
     public void EnterCertificateName(TMPro.TMP_Text text)
     {
@@ -139,5 +179,10 @@ public class PlayerData : MonoBehaviour
     {
         DateTime today = DateTime.Today;
         text.text = today.ToShortDateString();
+    }
+
+    public void QuitApp()
+    {
+        Application.Quit();
     }
 }

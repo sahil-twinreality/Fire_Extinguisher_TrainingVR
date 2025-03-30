@@ -293,7 +293,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 158370, guid: c18227260a0097648b6a3bbd837f3571, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1326149827}
+      addedObject: {fileID: 1326149829}
   m_SourcePrefab: {fileID: 100100000, guid: c18227260a0097648b6a3bbd837f3571, type: 3}
 --- !u!4 &6159506 stripped
 Transform:
@@ -314,6 +314,7 @@ GameObject:
   - component: {fileID: 8580689}
   - component: {fileID: 8580688}
   - component: {fileID: 8580687}
+  - component: {fileID: 8580692}
   m_Layer: 10
   m_Name: Obi Rope
   m_TagString: Untagged
@@ -470,6 +471,25 @@ MonoBehaviour:
   m_Target: {fileID: 1006989846}
   m_ParticleGroup: {fileID: -2639811391673711616, guid: 9d8ad1e0aac8f48deb9f3cda92974152, type: 2}
   m_AttachmentType: 0
+  m_ConstrainOrientation: 0
+  m_Compliance: 0
+  m_BreakThreshold: Infinity
+--- !u!114 &8580692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8580685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d03c9194b7ab4aaba4dfa5afec22c69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actor: {fileID: 8580689}
+  m_Target: {fileID: 1006989846}
+  m_ParticleGroup: {fileID: -2639811391673711616, guid: d82adbfa2e0744621823a657cc1d4d9a, type: 2}
+  m_AttachmentType: 1
   m_ConstrainOrientation: 0
   m_Compliance: 0
   m_BreakThreshold: Infinity
@@ -2277,8 +2297,8 @@ MonoBehaviour:
   onCollisionDetected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1030484785}
-        m_TargetAssemblyTypeName: FireExtinguisher, Assembly-CSharp
+      - m_Target: {fileID: 1030484787}
+        m_TargetAssemblyTypeName: Pass_FireExtinguisher, Assembly-CSharp
         m_MethodName: Extinguish
         m_Mode: 1
         m_Arguments:
@@ -3143,11 +3163,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allFires:
-  - {fileID: 1030484785}
-  - {fileID: 653972829}
-  - {fileID: 1383939754}
-  - {fileID: 1514349594}
-  - {fileID: 1326149827}
+  - {fileID: 1030484787}
+  - {fileID: 653972831}
+  - {fileID: 1383939756}
+  - {fileID: 1514349596}
+  - {fileID: 1326149829}
   onAllFireVanished:
     m_PersistentCalls:
       m_Calls:
@@ -3361,8 +3381,8 @@ MonoBehaviour:
   onCollisionDetected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 653972829}
-        m_TargetAssemblyTypeName: FireExtinguisher, Assembly-CSharp
+      - m_Target: {fileID: 653972831}
+        m_TargetAssemblyTypeName: Pass_FireExtinguisher, Assembly-CSharp
         m_MethodName: Extinguish
         m_Mode: 1
         m_Arguments:
@@ -4341,7 +4361,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 158370, guid: c18227260a0097648b6a3bbd837f3571, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 653972829}
+      addedObject: {fileID: 653972831}
   m_SourcePrefab: {fileID: 100100000, guid: c18227260a0097648b6a3bbd837f3571, type: 3}
 --- !u!4 &653972826 stripped
 Transform:
@@ -4353,7 +4373,7 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 19827340, guid: c18227260a0097648b6a3bbd837f3571, type: 3}
   m_PrefabInstance: {fileID: 653972825}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &653972829
+--- !u!114 &653972831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4362,7 +4382,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 36932372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f49235b82ea4c574b9d8ef1419096a27, type: 3}
+  m_Script: {fileID: 11500000, guid: 181e0c4c913859e40b3c2d0bccc09408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fire: {fileID: 653972828}
@@ -4492,7 +4512,31 @@ MonoBehaviour:
       m_Calls: []
   onRightTriggerRevoked:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 123374428}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1469583598}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onRightTriggerPressed:
     m_PersistentCalls:
       m_Calls:
@@ -5591,52 +5635,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1.75, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &857775482
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 857775484}
-  - component: {fileID: 857775483}
-  m_Layer: 0
-  m_Name: BurstCollisionWorld
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &857775483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 857775482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1a161c4294214a4fbcb7e9e94800494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cellSpans:
-    m_AlignBytes: 16
---- !u!4 &857775484
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 857775482}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &897571280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6515,6 +6513,52 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7043370197677225023, guid: 4cf8c7724143ccc419af7e5229066fd9, type: 3}
+--- !u!1 &922159602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 922159604}
+  - component: {fileID: 922159603}
+  m_Layer: 0
+  m_Name: BurstCollisionWorld
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &922159603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922159602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a161c4294214a4fbcb7e9e94800494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellSpans:
+    m_AlignBytes: 16
+--- !u!4 &922159604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922159602}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &935753536
 GameObject:
   m_ObjectHideFlags: 0
@@ -7339,7 +7383,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 158370, guid: c18227260a0097648b6a3bbd837f3571, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1030484785}
+      addedObject: {fileID: 1030484787}
   m_SourcePrefab: {fileID: 100100000, guid: c18227260a0097648b6a3bbd837f3571, type: 3}
 --- !u!4 &1030484782 stripped
 Transform:
@@ -7351,7 +7395,7 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 19827340, guid: c18227260a0097648b6a3bbd837f3571, type: 3}
   m_PrefabInstance: {fileID: 1030484780}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1030484785
+--- !u!114 &1030484787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7360,7 +7404,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 380266210}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f49235b82ea4c574b9d8ef1419096a27, type: 3}
+  m_Script: {fileID: 11500000, guid: 181e0c4c913859e40b3c2d0bccc09408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fire: {fileID: 1030484784}
@@ -8121,7 +8165,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 158370, guid: c18227260a0097648b6a3bbd837f3571, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1383939754}
+      addedObject: {fileID: 1383939756}
   m_SourcePrefab: {fileID: 100100000, guid: c18227260a0097648b6a3bbd837f3571, type: 3}
 --- !u!4 &1147845740 stripped
 Transform:
@@ -8601,7 +8645,7 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 19827340, guid: c18227260a0097648b6a3bbd837f3571, type: 3}
   m_PrefabInstance: {fileID: 6159505}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1326149827
+--- !u!114 &1326149829
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8610,7 +8654,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1326149824}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f49235b82ea4c574b9d8ef1419096a27, type: 3}
+  m_Script: {fileID: 11500000, guid: 181e0c4c913859e40b3c2d0bccc09408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fire: {fileID: 1326149826}
@@ -8709,8 +8753,8 @@ MonoBehaviour:
   onCollisionDetected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1326149827}
-        m_TargetAssemblyTypeName: FireExtinguisher, Assembly-CSharp
+      - m_Target: {fileID: 1326149829}
+        m_TargetAssemblyTypeName: Pass_FireExtinguisher, Assembly-CSharp
         m_MethodName: Extinguish
         m_Mode: 1
         m_Arguments:
@@ -8805,7 +8849,7 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 19827340, guid: c18227260a0097648b6a3bbd837f3571, type: 3}
   m_PrefabInstance: {fileID: 1147845739}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1383939754
+--- !u!114 &1383939756
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8814,7 +8858,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1383939751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f49235b82ea4c574b9d8ef1419096a27, type: 3}
+  m_Script: {fileID: 11500000, guid: 181e0c4c913859e40b3c2d0bccc09408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fire: {fileID: 1383939753}
@@ -9301,7 +9345,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 158370, guid: c18227260a0097648b6a3bbd837f3571, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1514349594}
+      addedObject: {fileID: 1514349596}
   m_SourcePrefab: {fileID: 100100000, guid: c18227260a0097648b6a3bbd837f3571, type: 3}
 --- !u!4 &1514349591 stripped
 Transform:
@@ -9313,7 +9357,7 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 19827340, guid: c18227260a0097648b6a3bbd837f3571, type: 3}
   m_PrefabInstance: {fileID: 1514349590}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1514349594
+--- !u!114 &1514349596
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9322,7 +9366,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 653254212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f49235b82ea4c574b9d8ef1419096a27, type: 3}
+  m_Script: {fileID: 11500000, guid: 181e0c4c913859e40b3c2d0bccc09408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fire: {fileID: 1514349593}
@@ -9466,8 +9510,8 @@ MonoBehaviour:
   onCollisionDetected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1383939754}
-        m_TargetAssemblyTypeName: FireExtinguisher, Assembly-CSharp
+      - m_Target: {fileID: 1383939756}
+        m_TargetAssemblyTypeName: Pass_FireExtinguisher, Assembly-CSharp
         m_MethodName: Extinguish
         m_Mode: 1
         m_Arguments:
@@ -11007,6 +11051,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3719865058671406942, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3719865058671406943, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -11206,8 +11254,8 @@ MonoBehaviour:
   onCollisionDetected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1514349594}
-        m_TargetAssemblyTypeName: FireExtinguisher, Assembly-CSharp
+      - m_Target: {fileID: 1514349596}
+        m_TargetAssemblyTypeName: Pass_FireExtinguisher, Assembly-CSharp
         m_MethodName: Extinguish
         m_Mode: 1
         m_Arguments:
@@ -13140,5 +13188,5 @@ SceneRoots:
   - {fileID: 701168245}
   - {fileID: 454336029}
   - {fileID: 418983268}
-  - {fileID: 857775484}
   - {fileID: 2034755252}
+  - {fileID: 922159604}

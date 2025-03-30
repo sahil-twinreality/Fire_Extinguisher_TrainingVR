@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class FireExtCheck : MonoBehaviour
 {
-    public FireExtinguisher[] allFires;
+    public Pass_FireExtinguisher[] allFires;
     public UnityEvent onAllFireVanished;
     private bool invokeOnce;
 
@@ -12,7 +12,7 @@ public class FireExtCheck : MonoBehaviour
         if (invokeOnce)
             return;
 
-        foreach (FireExtinguisher obj in allFires)
+        foreach (Pass_FireExtinguisher obj in allFires)
         {
             if (!obj.animCompleted)
             {

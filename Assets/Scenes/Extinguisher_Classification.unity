@@ -2480,8 +2480,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.16640998, y: 0.038115796, z: 0.082451515}
-  m_Center: {x: -0.048830636, y: 0.0040860386, z: 0.5804487}
+  m_Size: {x: 0.060815178, y: 0.175562, z: 0.080067165}
+  m_Center: {x: 0.0138689885, y: 0.06872306, z: 0.059443872}
 --- !u!1 &701896367 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8574887230593980963, guid: 6c93b07b2d8f6124cbdcd7226e313a56, type: 3}
@@ -2785,7 +2785,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Ext_Class
+          m_StringArgument: Extinguisher_Class
           m_BoolArgument: 0
         m_CallState: 2
   onNarration1End:
@@ -6935,6 +6935,10 @@ PrefabInstance:
     - target: {fileID: 3657483085350441816, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719865058671406942, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3719865058671406943, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
       propertyPath: m_Enabled
