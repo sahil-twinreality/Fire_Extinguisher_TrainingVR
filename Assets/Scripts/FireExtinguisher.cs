@@ -33,7 +33,7 @@ public class FireExtinguisher : MonoBehaviour
         yield return new WaitForSeconds(reductionTime);
         smoke.startLifetime = 0;
         OnSmokeStopped.Invoke();
-        yield return new WaitForSeconds(reductionTime + 2.5f);
+        yield return new WaitForSeconds(reductionTime + 0.5f);
         animCompleted = true;
         onAnimCompleted.Invoke();
         //yield return new WaitForSeconds(1.5f);

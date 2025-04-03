@@ -43,10 +43,23 @@ public class ObjectSnapper : MonoBehaviour
     {
         if (eventCalled && other.gameObject == Object && !eventCompleted)
         {
-            gameObject.GetComponent<SnapZone>().GrabGrabbable(Object.GetComponent<Grabbable>());
-            Object.GetComponent<Grabbable>().CanBeDropped = true;
+            Grabbable grabbableObject = Object.GetComponent<Grabbable>();
+            SnapZone snapZone = gameObject.GetComponent<SnapZone>();
+
+            if (grabbableObject.BeingHeld)
+            {
+                grabbableObject.GetPrimaryGrabber().ForceRelease = true;
+            }
+
+            snapZone.GrabGrabbable(grabbableObject);
+
+            grabbableObject.CanBeDropped = true;
+
             onObjectSnapped.Invoke();
+
             objectCollided = true;
+
+            AfterObjectSnap();
         }
     }
 

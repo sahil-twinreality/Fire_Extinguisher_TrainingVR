@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerData : MonoBehaviour
@@ -12,7 +13,6 @@ public class PlayerData : MonoBehaviour
     private string playerName;
     private static bool dataInputed;
     public UnityEvent onDataInputed;
-    //public ButtonPrefsChecker[] prefsCheckers;
     public UnityEvent onAllSceneCompleted;
     public UnityEvent onFireTriangleCompleted;
     public UnityEvent onFireClassCompleted;
@@ -58,42 +58,35 @@ public class PlayerData : MonoBehaviour
             }
         }
 
-        if(dataInputed)
+        if (dataInputed)
         {
             onDataInputed.Invoke();
+            inputName.text = playerName;
         }
-        //PlayerPrefs.DeleteAll();
-
-        // Load progress from PlayerPrefs
         Invoke("CheckMenuData", 0.5f);
     }
 
     public void CheckMenuData()
     {
         dataInputed = true;
-        Debug.Log("Checking Menu Data...");
 
         if (PlayerPrefs.GetInt("Fire_Triangle_eventCompleted", 0) == 1)
         {
-            Debug.Log("Fire Triangle Completed!");
             onFireTriangleCompleted.Invoke();
         }
 
         if (PlayerPrefs.GetInt("Extinguisher_Class_eventCompleted", 0) == 1)
         {
-            Debug.Log("Extinguisher Class Completed!");
             onExtClassCompleted.Invoke();
         }
 
         if (PlayerPrefs.GetInt("Fire_Class_eventCompleted", 0) == 1)
         {
-            Debug.Log("Fire Class Completed!");
             onFireClassCompleted.Invoke();
         }
 
         if (PlayerPrefs.GetInt("PASS_eventCompleted", 0) == 1)
         {
-            Debug.Log("PASS Class Completed!");
             onPassClassCompleted.Invoke();
         }
 
@@ -123,52 +116,12 @@ public class PlayerData : MonoBehaviour
     public void ResetData()
     {
         PlayerPrefs.DeleteAll();
-        playerName = PlayerPrefs.GetString(playerNameKey, "");
-        inputName.placeholder.GetComponent<Text>().text = "Please Enter Your Name";
-        inputName.text = null;
-        oldUser.gameObject.SetActive(true);
-        oldUser.transform.localPosition = new Vector3(0, -175, 0);
-        newUser.gameObject.SetActive(false);
         PlayerPrefs.Save();
-    }
 
-    /*public void ReloadData()
-    {
         dataInputed = false;
-        foreach (ButtonPrefsChecker buttonPrefs in prefsCheckers)
-        {
-            buttonPrefs.ReloadData();
-        }
 
-        if (dataInputed)
-        {
-            onDataInputed.Invoke();
-        }
-
-        else
-        {
-            playerName = PlayerPrefs.GetString(playerNameKey, "");
-
-            if (!string.IsNullOrEmpty(playerName))
-            {
-                inputName.text = playerName;
-                newUser.transform.localPosition = new Vector3(250, -175, 0);
-                oldUser.gameObject.SetActive(true);
-            }
-            else
-            {
-                oldUser.gameObject.SetActive(true);
-                oldUser.transform.localPosition = new Vector3(0, -175, 0);
-                newUser.gameObject.SetActive(false);
-                keyboard.gameObject.SetActive(true);
-                inputName.placeholder.GetComponent<Text>().text = "Please Enter Your Name";
-            }
-
-            dataInputed = true;
-        }
-
-        Invoke("CheckMenuData", 0.1f);
-    }*/
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
     public void EnterCertificateName(TMPro.TMP_Text text)
     {
