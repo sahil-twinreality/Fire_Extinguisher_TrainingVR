@@ -4121,14 +4121,11 @@ MonoBehaviour:
   position: {x: 0, y: 1.25, z: 2}
   rotation: {x: 0, y: 0, z: 0}
   text: {fileID: 850219375}
-  string1: 'Place the extinguisher in the designated area
-
-
-    Text & Audio Missing'
+  string1: Place the extinguisher in the designated area
   string2: 
   narration1WaitTime: 0
   audioSource: {fileID: 1594899290}
-  audioClip1: {fileID: 8300000, guid: 5171853f9d5247a4e8b6b57242e88fab, type: 3}
+  audioClip1: {fileID: 8300000, guid: c4d0a31ca1b05b34aad077e5c8fccfb8, type: 3}
   audioClip2: {fileID: 0}
   onNarrationStart:
     m_PersistentCalls:

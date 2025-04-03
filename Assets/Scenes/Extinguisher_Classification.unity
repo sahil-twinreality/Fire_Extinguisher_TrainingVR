@@ -2032,15 +2032,12 @@ MonoBehaviour:
   position: {x: 0, y: 1.25, z: 2}
   rotation: {x: 0, y: 0, z: 0}
   text: {fileID: 832322728}
-  string1: 'Let''s Learn the Grab Action, Press the Grab Buttons Highlighted on your
+  string1: Let's Learn the Grab Action, Press the Grab Buttons Highlighted on your
     controller to continue...
-
-
-    Text & Audio Missing'
   string2: 
   narration1WaitTime: 0
   audioSource: {fileID: 218171130}
-  audioClip1: {fileID: 8300000, guid: 1306c1080100c604e90f72802fd3286b, type: 3}
+  audioClip1: {fileID: 8300000, guid: 70db6268fd72be243901b8bfdb13cff3, type: 3}
   audioClip2: {fileID: 0}
   onNarrationStart:
     m_PersistentCalls:
