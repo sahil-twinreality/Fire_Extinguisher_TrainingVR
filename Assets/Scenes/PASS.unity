@@ -7006,7 +7006,7 @@ MonoBehaviour:
   position: {x: 0, y: 1.25, z: 2}
   rotation: {x: 0, y: 0, z: 0}
   text: {fileID: 850219375}
-  string1: Squeeze the handle to release the extinguishing agent.
+  string1: Squeeze the handle using trigger button to release the extinguishing agent.
   string2: 
   narration1WaitTime: 0
   audioSource: {fileID: 1594899290}
